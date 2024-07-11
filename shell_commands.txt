@@ -1,0 +1,53 @@
+### Setup Virtual Environment in local folder 
+
+# Remove the existing virtual environment
+rm -rf .venv
+
+# Create a new virtual environment
+python3 -m venv .venv
+
+# Activate the virtual environment
+source .venv/bin/activate  # On macOS/Linux
+# .venv\Scripts\activate  # On Windows
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Verify installed packages
+pip list
+
+# Dectivate the virtual environment
+deactivate
+
+### set up connection to main branch in github remote repository from a local folder
+# Step 1: Open Terminal
+
+# Step 2: Install Git if not already installed
+git --version
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+brew install git
+
+# Step 3: Verify Git installation
+git --version
+
+# Step 4: Navigate to your local project folder
+cd /path/to/your/local/folder
+
+# Step 5: Initialize Git repository if not already initialized
+git init
+
+# Step 6: Add remote repository
+git remote add origin git@github.com:<USERNAME>/<REPO>.git
+
+# Step 7: Verify remote URL
+git remote -v
+
+# Step 8: Pull latest changes from main branch (optional)
+git pull origin main
+
+# Step 9: Stage and commit your changes
+git add .
+git commit -m "Initial commit"
+
+# Step 10: Push local changes to main branch on remote repository
+git push -u origin main
